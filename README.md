@@ -2,7 +2,7 @@
 
 ## Tech Stack & Architecture
 
-![Tech Stack & Architecture](https://github.com/Kai-334/Cricket-Statistics-Data-Pipeline-in-Google-Cloud-using-Airflow/blob/6eee9fd7bbed1d8b1232d8cbed8db19f9216f735/Project%20Architecture.png)
+![Tech Stack & Architecture](https://github.com/Kai-334/Cricket-Statistics-Data-Pipeline-in-Google-Cloud-using-Airflow/blob/d9ee329ab1f4af5b02bb3bdd3e43edab2e83b296/Project%20Architecture.png)
 
 This project leverages an **end-to-end data pipeline** built with the following technologies. The diagram above illustrates how the data flows across these components:
 
