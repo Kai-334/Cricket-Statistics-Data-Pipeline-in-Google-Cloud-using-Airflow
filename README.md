@@ -25,6 +25,31 @@ BigQuery acts as the data source for Looker Studio. A dynamic dashboard is creat
 
 ---
 
-### Key Learning Outcome:
+## Key Learning Outcome:
 This project demonstrates proficiency in using Google Cloud tools, including Airflow for automation, Cloud Storage for data storage, Cloud Functions for event-driven processing, Dataflow for loading data into BigQuery, and Looker Studio for data visualization. It highlights my ability to work with these tools in building a cloud-based data pipeline, which is valuable for potential employers in the data engineering field.
+
+## Automated Data Retrieval and Upload with Apache Airflow (Cloud Composer)
+
+![1](https://github.com/Kai-334/Cricket-Statistics-Data-Pipeline-using-Google-Cloud-Services/blob/f48ead5f6a5f864296df4d3843a290ce3fd5aa9a/Airflow.png)
+
+## Google Cloud Storage for Cricket Statistics Data
+
+![2](https://github.com/Kai-334/Cricket-Statistics-Data-Pipeline-using-Google-Cloud-Services/blob/f48ead5f6a5f864296df4d3843a290ce3fd5aa9a/Google%20Cloud%20Storage.png)
+
+## Cloud Function to Trigger Dataflow Job 
+
+![3](https://github.com/Kai-334/Cricket-Statistics-Data-Pipeline-using-Google-Cloud-Services/blob/f48ead5f6a5f864296df4d3843a290ce3fd5aa9a/Cloud%20Function.png)
+
+## Dataflow Job to Load Data into BigQuery
+
+![4](https://github.com/Kai-334/Cricket-Statistics-Data-Pipeline-using-Google-Cloud-Services/blob/f48ead5f6a5f864296df4d3843a290ce3fd5aa9a/dataflow.png)
+
+## Data on BigQuery
+
+![5](https://github.com/Kai-334/Cricket-Statistics-Data-Pipeline-using-Google-Cloud-Services/blob/f48ead5f6a5f864296df4d3843a290ce3fd5aa9a/bigQuery.png)
+
+## Looker Studio for Data Visualisation
+
+![6](https://github.com/Kai-334/Cricket-Statistics-Data-Pipeline-using-Google-Cloud-Services/blob/f48ead5f6a5f864296df4d3843a290ce3fd5aa9a/Looker.png)
+
 
