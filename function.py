@@ -1,24 +1,30 @@
 from googleapiclient.discovery import build
 
-def trigger_df_job(cloud_event,environment):   
- 
+def trigger_df_job():   
+    
+    # Initializing the Dataflow API Service
     service = build('dataflow', 'v1b3')
-    project = "rare-array-438709-t1"
 
+    # Setting the project ID
+    project = "cricket-statistics-etl"
+
+    # Points to a pre-built Dataflow template provided by Google
     template_path = "gs://dataflow-templates-us-central1/latest/GCS_Text_to_BigQuery"
 
     template_body = {
         "jobName": "bq-load",  # Provide a unique name for the job
         "parameters": {
-        "javascriptTextTransformGcsPath": "gs://bucket-dataflow-metadata-123/udf.js",
-        "JSONPath": "gs://bucket-dataflow-metadata-123/bq.json",
+        "javascriptTextTransformGcsPath": "gs://bucket-dataflow-required-data/udf.js",
+        "JSONPath": "gs://bucket-dataflow-required-data/bq.json",
         "javascriptTextTransformFunctionName": "transform",
-        "outputTable": "rare-array-438709-t1:cricket_dataset.icc_odi_batsman_ranking",
-        "inputFilePattern": "gs://bucket-ranking-data-123/batsmen_rankings.csv",
-        "bigQueryLoadingTemporaryDirectory": "gs://bucket-dataflow-metadata-123",
+        "outputTable": "cricket-statistics-etl:cricket_dataset.icc_odi_bastman_ranking",
+        "inputFilePattern": "bucket-cricket-data/batsmen_rankings.csv",
+        "bigQueryLoadingTemporaryDirectory": "bucket-dataflow-required-data",
         }
     }
 
-    request = service.projects().templates().launch(projectId=project,gcsPath=template_path, body=template_body)
+    # Launching the Dataflow Job
+    request = service.projects().templates().launch(projectId=project, gcsPath=template_path, body=template_body)
     response = request.execute()
+    
     print(response)

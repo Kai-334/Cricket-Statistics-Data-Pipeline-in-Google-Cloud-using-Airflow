@@ -1,24 +1,26 @@
-import os
 import requests
 import csv
 from google.cloud import storage
 
-# Example sensitive information stored as variables (ideally use environment variables)
-rapidapi_key = "your_api_key_here"
-bucket_name = "your_bucket_name_here"
+# Sensitive information stored as variables (ideally use environment variables)
+rapidapi_key = "144181a071msh5d9196c15b2ec9ep1563c6jsn060228a858a3"
+bucket_name = "bucket-cricket-data"
 
+# API endpoint and Request Setup
 url = 'https://cricbuzz-cricket.p.rapidapi.com/stats/v1/rankings/batsmen'
 headers = {
     'X-RapidAPI-Key': rapidapi_key,  # Use environment variable for API key
     'X-RapidAPI-Host': 'cricbuzz-cricket.p.rapidapi.com'
 }
+# Query parameter to fetch rankings specific to "One Day Internationals (ODI)"
 params = {
     'formatType': 'odi'
 }
 
+# Making the API request
 response = requests.get(url, headers=headers, params=params)
 
-# Fetch the data
+# Check API response
 if response.status_code == 200:
     data = response.json().get('rank', [])  # Extracting the full rank data
 
@@ -27,12 +29,11 @@ if response.status_code == 200:
     if data:
         field_names = ['rank', 'name', 'country']  # Specify required field names
 
-        # Write data to CSV file without headers
+        # Write data to CSV file
         with open(csv_filename, 'w', newline='', encoding='utf-8') as csvfile:
             writer = csv.DictWriter(csvfile, fieldnames=field_names)
 
             for i, entry in enumerate(data, start=1):  # Ensure rank starts from 1
-                entry['rank'] = i  # Set the correct rank number
                 writer.writerow({field: entry.get(field) for field in field_names})
 
         print(f"Data fetched successfully and written to '{csv_filename}'")
